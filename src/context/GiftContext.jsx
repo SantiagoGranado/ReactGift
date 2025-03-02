@@ -8,9 +8,16 @@ export function useGift() {
 
 export function GiftProvider({ children }) {
   const [gifts, setGifts] = useState([]);
+  const [idCounter, setIdCounter] = useState(1);
 
   const addGift = (name, description) => {
-    setGifts([...gifts, { id: Date.now(), name, description }]);
+    const newGift = {
+      id: idCounter,
+      name,
+      description,
+    };
+    setGifts([...gifts, newGift]);
+    setIdCounter(idCounter + 1); 
   };
 
   return (

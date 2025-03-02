@@ -12,6 +12,7 @@ function GiftDetailsPage() {
 
   return (
     <div>
+      <h2>{gift.id}</h2>
       <h2>{gift.name}'s Gift</h2>
       <p>{gift.description}</p>
       <button onClick={() => navigate("/list")}>Back</button>
