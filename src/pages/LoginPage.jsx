@@ -9,6 +9,7 @@ function LoginPage() {
   const handleLogin = () => {
     login({ name: "Santi" });
     navigate("/list");
+    navigate("/list");
   };
 
   return (
