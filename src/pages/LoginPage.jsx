@@ -1,4 +1,3 @@
-// src/pages/LoginPage.jsx
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
@@ -7,8 +6,8 @@ function LoginPage() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
+    console.log("Botón de login clickeado");
     login({ name: "Santi" });
-    navigate("/list");
     navigate("/list");
   };
 

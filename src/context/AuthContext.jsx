@@ -15,6 +15,7 @@ export function AuthProvider({ children }) {
 
   const logout = () => {
     setCurrentUser(null);
+    
   };
 
   return (

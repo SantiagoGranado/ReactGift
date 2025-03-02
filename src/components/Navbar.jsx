@@ -1,8 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 function Navbar() {
-  const { currentUser, login, logout } = useAuth();
+  const { currentUser, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();      
+    navigate("/"); 
+  };
 
   return (
     <nav className="navbar">
@@ -15,10 +21,10 @@ function Navbar() {
       {currentUser ? (
         <div className="auth-container">
           <span className="user-text">Welcome, {currentUser.name}!</span>
-          <button onClick={logout} className="logout-btn">Logout</button>
+          <button onClick={handleLogout} className="logout-btn">Logout</button>
         </div>
       ) : (
-        <button onClick={() => login({ name: "Santi" })} className="login-btn">Login</button>
+        <Link to="/login" className="login-btn">Login</Link>
       )}
     </nav>
   );
